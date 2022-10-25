@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="manifest" href="./manifest.json">
+    <script type="text/javascript">
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("sw.js");
+        }
+      </script>
+</head>
+<body background="inicio.jpg";>
+    <br>
+    <center>
+    <h4><b style="font-size: 20pt; font-weight: bold;background: aqua;">PRIMERA FRACCION</b></h4>
+    <label for="numero1" style="font-size: 20pt; background-position: left; font-weight: bold;background: yellow;">Ingrese el numerador: </label>
+    <br><br>
+    <input type="text" id="numero1" onchange="mult();" style="background: aqua; border: black 2px solid; text-align: center;">
+    <br><br>
+    <label for="numero2" style="font-size: 20pt; text-align: center; font-weight: bold;background: yellow;">Ingrese el denominador: </label>
+    <br><br>
+    <input type="text" id="numero2" onchange="mult();" style="background: aqua; border: black 2px solid; text-align: center;"><br>
+    <br>
+    <h4><b style="font-size: 20pt; font-weight: bold;background: aqua;">SEGUNDA FRACCION</b></h4>
+    <label for="numero3" style="font-size: 20pt; background-position: left; font-weight: bold;background: yellow;">Ingrese el numerador: </label>
+    <br><br>
+    <input type="text" id="numero3" onchange="mult();" style="background: aqua; border: black 2px solid; text-align: center;">
+    <br><br>
+    <label for="numero4" style="font-size: 20pt; text-align: center; font-weight: bold;background: yellow;">Ingrese el denominador: </label>
+    <br><br>
+    <input type="text" id="numero4" onchange="mult();" style="background: aqua; border: black 2px solid; text-align: center;"><br>
+    <br>
+    <label for="resultado" style="font-size: 20pt; text-align: center; font-weight: bold;background: yellow;">Resultado</label>
+    <br><br>
+    <input type="text" id="resultado" style="background: aqua; border: black 2px solid; text-align: center;">
+</center>
+    <script>
+        // si la respuesta que se espera es sumar
+        function mult(){
+            var numero1 = document.getElementById('numero1').value;
+            var numero2 = document.getElementById('numero2').value;
+            var numero3 = document.getElementById('numero3').value;
+            var numero4 = document.getElementById('numero4').value;
+    
+            if(numero1!=='' && numero2!=='' && numero3!=='' && numero4!==''){
+                var num1 = parseInt(numero1)*parseInt(numero4);
+                var num2 = parseInt(numero2)*parseInt(numero3);
+                var num3 = parseInt(numero2)*parseInt(numero4);
+                var res1 = num1+num2;
+                var resfn = res1/num3;
+                document.getElementById('resultado').value = resfn;
+            }
+        }
+    </script>
+    
+    <br>
+    <center><a href="index.html"><input type="button" value="REGRESAR" style="padding: 1%;
+        font-size: 11pt;
+        font-weight: bold;
+        border-radius: 5%;
+        border: black 2px solid;
+        background: yellow;
+        box-shadow: black 5px 5px 5px;
+        margin-bottom: 10px;"></a></center> 
+</body>
+</html>
